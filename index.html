@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- =========================================================================
+  O QUE AINDA FALTA NESTA PÁGINA
+  1. Procure por "PREENCHER" neste arquivo e troque pelo conteúdo real
+     (registro profissional da Camila e contato do rodapé).
+  2. Imagens: salve os arquivos na pasta img/ e troque cada bloco
+     <div class="ph"> pela tag <img> indicada no comentário logo acima dele.
+     (A foto da Camila já está no lugar.)
+  3. Domínio: já ativado (descomplicanvbmapp.com.br) e verificado no
+     Google Search Console pelo DNS.
+  4. Rodapé: troque os "#" pelos links da política de privacidade e dos termos.
+  5. Pixel e analytics: cole nos locais marcados com "PIXEL E ANALYTICS",
+     aqui e no script.js.
+  O link do checkout (Kiwify) já está em todos os botões.
+  Cores da marca: no início do styles.css, em :root.
+========================================================================== -->
+
+    <!-- ============================ SEO: GOOGLE ============================ -->
+    <title>Curso VB-MAPP na prática: como aplicar o protocolo | Lapidar Educação</title>
+    <meta
+      name="description"
+      content="Curso em videoaulas sobre o VB-MAPP: o que é o protocolo, como funciona e como aplicar, com exemplos reais. Para psicólogos, fonos, fisios e TOs."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#0E2A44" />
+    <!-- O "?v=2" força o navegador a baixar o ícone novo. Ao trocar o ícone
+     de novo, mude para ?v=3, ?v=4 etc. -->
+    <link rel="icon" href="favicon.ico?v=2" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2" />
+    <link rel="icon" type="image/png" sizes="256x256" href="favicon.png?v=2" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2" />
+
+    <!-- VERIFICAÇÃO DO GOOGLE SEARCH CONSOLE: já feita pelo DNS (registro TXT
+     na Hostinger). Não precisa colar nada aqui. Não apague esse registro TXT,
+     senão o Google perde a verificação. -->
+
+    <!-- ================= SEO: TAGS QUE DEPENDEM DO DOMÍNIO =================
+  Se o domínio mudar, troque https://descomplicanvbmapp.com.br/ em todas as linhas abaixo
+  e também no robots.txt e no sitemap.xml.
+  A imagem de compartilhamento fica em img/compartilhamento.jpg (1200 x 630 px).
+  O preço do bloco de produto (49.90) precisa ser igual ao preço da página.
+====================================================================== -->
+    <link rel="canonical" href="https://descomplicanvbmapp.com.br/" />
+    <meta property="og:url" content="https://descomplicanvbmapp.com.br/" />
+    <meta
+      property="og:image"
+      content="https://descomplicanvbmapp.com.br/img/compartilhamento.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Curso VB-MAPP na prática, com a psicóloga Camila Olegario"
+    />
+    <meta
+      name="twitter:image"
+      content="https://descomplicanvbmapp.com.br/img/compartilhamento.jpg"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://descomplicanvbmapp.com.br/#site",
+            "url": "https://descomplicanvbmapp.com.br/",
+            "name": "Descomplica VB-MAPP",
+            "inLanguage": "pt-BR",
+            "publisher": { "@id": "https://descomplicanvbmapp.com.br/#org" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://descomplicanvbmapp.com.br/#org",
+            "name": "Lapidar Educação",
+            "url": "https://descomplicanvbmapp.com.br/",
+            "logo": "https://descomplicanvbmapp.com.br/img/logo-lapidar.png",
+            "parentOrganization": {
+              "@type": "MedicalClinic",
+              "name": "Lapidar Clínica Multidisciplinar",
+              "url": "https://www.lapidarclinica.com.br/"
+            },
+            "sameAs": ["https://www.instagram.com/lapidarclinicamulti/"]
+          },
+          {
+            "@type": "Product",
+            "name": "Curso VB-MAPP na prática",
+            "description": "Curso em videoaulas sobre o VB-MAPP: o que é o protocolo, como funciona e como aplicar, com exemplos reais.",
+            "image": "https://descomplicanvbmapp.com.br/img/compartilhamento.jpg",
+            "brand": { "@type": "Brand", "name": "Lapidar Educação" },
+            "offers": {
+              "@type": "Offer",
+              "url": "https://descomplicanvbmapp.com.br/",
+              "price": 49.90,
+              "priceCurrency": "BRL",
+              "availability": "https://schema.org/InStock",
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "BR",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                "merchantReturnDays": 7
+              }
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Open Graph (prévia do link no WhatsApp, Instagram e Facebook).
+     A imagem de compartilhamento está no bloco do domínio, acima. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Lapidar Educação" />
+    <meta
+      property="og:title"
+      content="Aprenda a aplicar o VB-MAPP na prática"
+    />
+    <meta
+      property="og:description"
+      content="Curso em videoaulas para profissionais que atendem crianças autistas: o que é o VB-MAPP, como funciona e como aplicar, com exemplos reais."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700;800&family=Red+Hat+Text:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- O "?v=3" força o navegador a baixar a versão nova. Sempre que alterar
+     o styles.css ou o script.js, aumente o número (?v=4, ?v=5...). -->
+    <link rel="stylesheet" href="styles.css?v=3" />
+    <script src="script.js?v=3" defer></script>
+
+    <!-- ====================== PIXEL E ANALYTICS (HEAD) ======================
+  Cole aqui os códigos que vão no <head>:
+  Meta Pixel, Google Analytics (gtag.js), Google Tag Manager, TikTok Pixel etc.
+======================================================================= -->
+  </head>
+
+  <body>
+    <!-- ====================== PIXEL E ANALYTICS (BODY) ======================
+  Cole aqui o trecho <noscript> do Google Tag Manager ou do Meta Pixel.
+======================================================================= -->
+
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="topo">
+      <div class="wrap topo-linha">
+        <a class="marca" href="#inicio"
+          ><img
+            class="marca-logo"
+            src="img/logo-lapidar.png"
+            width="32"
+            height="32"
+            alt=""
+          />Lapidar Educação</span></a
+        >
+        <a
+          class="btn btn-p topo-cta"
+          href="https://pay.kiwify.com.br/oub3qMp"
+          data-cta
+          >Garantir meu acesso</a
+        >
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <!-- 1. HERO -->
+      <section class="hero escuro" id="inicio" aria-labelledby="titulo-hero">
+        <div class="wrap hero-grade">
+          <div>
+            <p class="hero-selo">
+              Lapidar Educação · Senador Canedo, GO
+            </p>
+            <h1 id="titulo-hero">
+              Aprenda a aplicar o <span class="nq">VB-MAPP</span> na prática
+            </h1>
+            <p class="hero-sub">
+              Curso em videoaulas para psicólogos, fonoaudiólogos,
+              fisioterapeutas e terapeutas ocupacionais que atendem crianças
+              autistas. Entenda o que é o protocolo, como ele funciona e como
+              aplicar, com exemplos reais.
+            </p>
+            <p class="hero-cta" data-esconde-barra>
+              <a class="btn" href="https://pay.kiwify.com.br/oub3qMp" data-cta
+                >Garantir meu acesso</a
+              >
+            </p>
+            <ul class="fatos">
+              <li>4 horas de videoaulas</li>
+              <li>1 ano de acesso</li>
+              <li>Garantia de 7 dias</li>
+            </ul>
+          </div>
+
+          <figure class="grade-marcos">
+            <div class="nivel">
+              <p class="nivel-rotulo">
+                <strong>Nível 1</strong> <span>0 a 18 meses</span>
+              </p>
+              <div class="quadros" aria-hidden="true">
+                <i class="q ok v" style="--i: 0"></i
+                ><i class="q ok v" style="--i: 1"></i
+                ><i class="q ok v" style="--i: 2"></i
+                ><i class="q ok v" style="--i: 3"></i
+                ><i class="q ok v" style="--i: 4"></i
+                ><i class="q ok v" style="--i: 5"></i
+                ><i class="q ok v" style="--i: 6"></i
+                ><i class="q ok v" style="--i: 7"></i
+                ><i class="q ok v" style="--i: 8"></i
+                ><i class="q ok v" style="--i: 9"></i>
+              </div>
+            </div>
+            <div class="nivel">
+              <p class="nivel-rotulo">
+                <strong>Nível 2</strong> <span>18 a 30 meses</span>
+              </p>
+              <div class="quadros" aria-hidden="true">
+                <i class="q ok a" style="--i: 10"></i
+                ><i class="q ok a" style="--i: 11"></i
+                ><i class="q ok a" style="--i: 12"></i
+                ><i class="q ok a" style="--i: 13"></i
+                ><i class="q ok a" style="--i: 14"></i
+                ><i class="q ok a" style="--i: 15"></i><i class="q"></i
+                ><i class="q"></i><i class="q"></i><i class="q"></i>
+              </div>
+            </div>
+            <div class="nivel">
+              <p class="nivel-rotulo">
+                <strong>Nível 3</strong> <span>30 a 48 meses</span>
+              </p>
+              <div class="quadros" aria-hidden="true">
+                <i class="q ok b" style="--i: 16"></i
+                ><i class="q ok b" style="--i: 17"></i><i class="q"></i
+                ><i class="q"></i><i class="q"></i><i class="q"></i
+                ><i class="q"></i><i class="q"></i><i class="q"></i
+                ><i class="q"></i>
+              </div>
+            </div>
+            <figcaption>
+              O <span class="nq">VB-MAPP</span> organiza 170 marcos do
+              desenvolvimento em 3 níveis.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 2. PROBLEMA -->
+      <section class="secao" id="problema" aria-labelledby="titulo-problema">
+        <div class="wrap">
+          <h2 id="titulo-problema">
+            Você sabe que o <span class="nq">VB-MAPP</span> é importante. Na
+            hora de aplicar, trava.
+          </h2>
+          <p class="intro">
+            Se alguma destas frases parece sua, este curso foi feito para você.
+          </p>
+
+          <ul class="duvidas">
+            <li>
+              “Já ouvi falar muito do <span class="nq">VB-MAPP</span>, mas nunca
+              entendi direito como ele funciona.”
+            </li>
+            <li>
+              “Li o manual e, na hora de aplicar, não sabia por onde começar.”
+            </li>
+            <li>
+              “Fico em dúvida se estou registrando os marcos do jeito certo.”
+            </li>
+            <li>“Sei que é importante, mas não sei explicar por quê.”</li>
+          </ul>
+
+          <p class="fecho">
+            Sem segurança na aplicação, fica difícil confiar no resultado da
+            avaliação.
+          </p>
+        </div>
+      </section>
+
+      <!-- 3. SOLUÇÃO -->
+      <section
+        class="secao secao-nevoa"
+        id="solucao"
+        aria-labelledby="titulo-solucao"
+      >
+        <div class="wrap solucao-grade">
+          <div>
+            <h2 id="titulo-solucao">
+              Do que é o <span class="nq">VB-MAPP</span> à aplicação, em um só
+              curso
+            </h2>
+            <p class="intro">
+              Em 4 horas de videoaulas, a psicóloga Camila Olegario explica o
+              protocolo e mostra como aplicá-lo, com exemplos reais.
+            </p>
+
+            <div class="pontos">
+              <div class="ponto">
+                <h3>Entenda antes de aplicar</h3>
+                <p>
+                  Saiba o que o <span class="nq">VB-MAPP</span> avalia e por que
+                  aplicá-lo é tão importante no atendimento.
+                </p>
+              </div>
+              <div class="ponto">
+                <h3>Veja a aplicação na prática</h3>
+                <p>
+                  Exemplos reais mostram o protocolo em uso, além do que está no
+                  manual.
+                </p>
+              </div>
+              <div class="ponto">
+                <h3>Estude no seu ritmo</h3>
+                <p>
+                  Aulas gravadas, com 1 ano de acesso para rever sempre que
+                  precisar.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="solucao-lado">
+            <!-- IMAGEM 1 (mockup das aulas). Troque todo o <div class="ph"> abaixo por:
+        <img class="foto" src="img/mockup-aulas.webp" width="1280" height="720" loading="lazy"
+             alt="Tela de uma videoaula do curso VB-MAPP na prática">
+        -->
+            <div class="ph ph-video">
+              <span class="ph-num">Imagem 1</span>
+              <span
+                >Mockup das aulas: uma videoaula do curso aberta no notebook ou
+                no celular, com a Camila explicando. Proporção 16:9, 1280 × 720
+                px.</span
+              >
+            </div>
+
+            <aside class="oque" aria-labelledby="titulo-oque">
+              <h3 id="titulo-oque">
+                O que é o <span class="nq">VB-MAPP</span>
+              </h3>
+              <p>
+                Criado por Mark L. Sundberg, o <span class="nq">VB-MAPP</span> é
+                um protocolo de avaliação baseado na análise do comportamento
+                verbal de B. F. Skinner. Ele reúne 170 marcos do desenvolvimento
+                em 3 níveis, uma avaliação de 24 barreiras de aprendizagem e uma
+                avaliação de transição com 18 áreas.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. O QUE ESTÁ INCLUÍDO
+       Os títulos abaixo seguem o conteúdo do curso. Se os módulos tiverem
+       outros nomes na Kiwify, troque aqui para ficarem iguais. -->
+      <section class="secao" id="incluido" aria-labelledby="titulo-incluido">
+        <div class="wrap">
+          <h2 id="titulo-incluido">O que você vai aprender</h2>
+          <p class="intro">O curso vai do conceito à aplicação.</p>
+
+          <ol class="etapas">
+            <li class="etapa">
+              <span class="etapa-num" aria-hidden="true">1</span>
+              <div>
+                <h3>O que é o <span class="nq">VB-MAPP</span></h3>
+                <p>O que é o protocolo e o que ele avalia.</p>
+              </div>
+            </li>
+            <li class="etapa">
+              <span class="etapa-num" aria-hidden="true">2</span>
+              <div>
+                <h3>Por que aplicar</h3>
+                <p>
+                  Por que aplicar o <span class="nq">VB-MAPP</span> é tão
+                  importante no atendimento.
+                </p>
+              </div>
+            </li>
+            <li class="etapa">
+              <span class="etapa-num" aria-hidden="true">3</span>
+              <div>
+                <h3>Como o protocolo funciona</h3>
+                <p>
+                  Como o <span class="nq">VB-MAPP</span> está organizado e como
+                  cada parte funciona.
+                </p>
+              </div>
+            </li>
+            <li class="etapa">
+              <span class="etapa-num" aria-hidden="true">4</span>
+              <div>
+                <h3>Como aplicar na prática</h3>
+                <p>A aplicação do protocolo, com exemplos reais.</p>
+              </div>
+            </li>
+          </ol>
+
+          <ul class="formato">
+            <li><strong>4 horas</strong> de videoaulas gravadas</li>
+            <li><strong>1 ano</strong> de acesso</li>
+            <li><strong>7 dias</strong> de garantia</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 5. PARA QUEM É E PARA QUEM NÃO É -->
+      <section
+        class="secao secao-nevoa"
+        id="para-quem"
+        aria-labelledby="titulo-quem"
+      >
+        <div class="wrap">
+          <h2 id="titulo-quem">Para quem é. E para quem não é.</h2>
+
+          <div class="quem-grade">
+            <div class="quem">
+              <h3>É para você se</h3>
+              <ul class="lista">
+                <li>
+                  É psicólogo, fonoaudiólogo, fisioterapeuta ou terapeuta
+                  ocupacional e atende crianças autistas.
+                </li>
+                <li>
+                  Quer entender o <span class="nq">VB-MAPP</span> antes de
+                  aplicar pela primeira vez.
+                </li>
+                <li>Já aplica, mas quer mais segurança em cada etapa.</li>
+                <li>Prefere ver a aplicação na prática, com exemplos reais.</li>
+              </ul>
+            </div>
+            <div class="quem">
+              <h3>Não é para você se</h3>
+              <ul class="lista lista-nao">
+                <li>
+                  Procura o protocolo em si. O curso não inclui o manual nem as
+                  folhas de registro do <span class="nq">VB-MAPP</span>.
+                </li>
+                <li>
+                  Busca uma formação completa em ABA. O foco aqui é o
+                  <span class="nq">VB-MAPP</span>.
+                </li>
+                <li>Quer aplicar o protocolo sem estudar o manual.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. SOBRE -->
+      <section class="secao" id="sobre" aria-labelledby="titulo-sobre">
+        <div class="wrap sobre-grade">
+          <img
+            class="foto sobre-foto"
+            src="img/camila-olegario.webp"
+            srcset="
+              img/camila-olegario.webp     800w,
+              img/camila-olegario@2x.webp 1600w
+            "
+            sizes="(min-width: 900px) 400px, 100vw"
+            width="800"
+            height="1000"
+            loading="lazy"
+            alt="Camila Olegario, psicóloga especialista em Análise Comportamental Aplicada, sorrindo em uma sala de atendimento da Lapidar"
+          />
+
+          <div>
+            <h2 id="titulo-sobre">Quem está por trás do curso</h2>
+
+            <div class="sobre-bloco">
+              <h3>Camila Carvalho Olegario</h3>
+              <p class="cargo">
+                Psicóloga e Neuropsicóloga, especialista em Análise Comportamental Aplicada
+                (ABA) CRP 09/19734
+              </p>
+              <p>
+                Tem 5 anos de experiência na aplicação do VB-MAPP em paciente com transtorno do espectro autista (TEA), ela explica o
+                <span class="nq">VB-MAPP</span> e mostra como aplicá-lo, com
+                exemplos reais.
+              </p>
+            </div>
+
+            <div class="sobre-bloco">
+              <h3>Lapidar Educação</h3>
+              <p>
+                É a frente de cursos da Lapidar Clínica Multidisciplinar. Aqui,
+                compartilhamos com outros profissionais o que aplicamos no dia a
+                dia da clínica. O primeiro curso é sobre o
+                <span class="nq">VB-MAPP</span>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6B. A CLÍNICA -->
+      <section
+        class="secao secao-nevoa"
+        id="clinica"
+        aria-labelledby="titulo-clinica"
+      >
+        <div class="wrap clinica-grade">
+          <img
+            class="foto clinica-foto"
+            src="img/clinica-fachada-retrato.webp"
+            width="725"
+            height="906"
+            loading="lazy"
+            alt="Fachada da Lapidar Clínica Multidisciplinar em Senador Canedo, com o logo e a entrada verde"
+          />
+
+          <div>
+            <h2 id="titulo-clinica">Um curso que nasce da prática clínica</h2>
+            <p class="intro">
+              A Lapidar Clínica Multidisciplinar atende crianças e adolescentes
+              em Senador Canedo, Goiás, há mais de 1 ano. O que você aprende no
+              curso é o que a equipe aplica todos os dias com os pacientes.
+            </p>
+
+            <ul class="lista">
+              <li>
+                Terapia ABA, avaliação neuropsicológica, psicologia infantil,
+                fonoaudiologia e terapia ocupacional no mesmo lugar.
+              </li>
+              <li>
+                Atendimento a crianças com autismo (TEA), TDAH, TOD e outras
+                condições do neurodesenvolvimento.
+              </li>
+              <li>Intervenções baseadas em evidências científicas.</li>
+            </ul>
+
+            <p class="clinica-endereco">
+              Rua Monteiro Lobato, Qd. 43, Lt. 32, Jardim Canedo I, Senador
+              Canedo (GO)
+            </p>
+
+            <p class="clinica-links">
+              <a
+                class="btn-contorno"
+                href="https://www.lapidarclinica.com.br/"
+                target="_blank"
+                rel="noopener"
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" /></svg
+                >Conheça a clínica</a
+              >
+              <a
+                class="btn-contorno"
+                href="https://www.instagram.com/lapidarclinicamulti/"
+                target="_blank"
+                rel="noopener"
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" /></svg
+                >@lapidarclinicamulti</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. PROVA SOCIAL
+       Use somente prints reais, enviados pelos próprios alunos, com autorização.
+       Esconda o número de telefone e a foto de perfil antes de publicar.
+       Se ainda não tiver prints, apague esta seção inteira até ter. -->
+      <section
+        class="secao"
+        id="depoimentos"
+        aria-labelledby="titulo-depoimentos"
+      >
+        <div class="wrap">
+          <h2 id="titulo-depoimentos">O que dizem os alunos</h2>
+          <p class="intro">Mensagens recebidas de quem fez o curso.</p>
+
+          <div
+            class="prints"
+            tabindex="0"
+            role="region"
+            aria-label="Prints de mensagens de alunos"
+          >
+            <!-- PRINT 1. Troque o <div class="ph"> abaixo por:
+        <img src="img/print-1.jpg" width="720" height="1280" loading="lazy"
+             alt="Mensagem de aluno no WhatsApp: [copie aqui o texto da mensagem]">
+        -->
+            <figure class="print">
+              <div class="ph">
+                <span class="ph-num">Print 1</span>
+                <span
+                  >Print de mensagem real de aluno no WhatsApp. Formato
+                  vertical, 720 × 1280 px.</span
+                >
+              </div>
+            </figure>
+            <!-- PRINT 2. Mesmo formato, arquivo img/print-2.jpg -->
+            <figure class="print">
+              <div class="ph">
+                <span class="ph-num">Print 2</span>
+                <span
+                  >Print de mensagem real de aluno no WhatsApp. Formato
+                  vertical, 720 × 1280 px.</span
+                >
+              </div>
+            </figure>
+            <!-- PRINT 3. Mesmo formato, arquivo img/print-3.jpg -->
+            <figure class="print">
+              <div class="ph">
+                <span class="ph-num">Print 3</span>
+                <span
+                  >Print de mensagem real de aluno no WhatsApp. Formato
+                  vertical, 720 × 1280 px.</span
+                >
+              </div>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. OFERTA -->
+      <section
+        class="secao oferta escuro"
+        id="oferta"
+        aria-labelledby="titulo-oferta"
+        data-esconde-barra
+      >
+        <div class="wrap">
+          <h2 id="titulo-oferta">
+            Seu acesso ao curso <span class="nq">VB-MAPP</span> na prática
+          </h2>
+          <p class="intro">Assista quando quiser, pelo tempo de 1 ano.</p>
+
+          <div class="oferta-cartao">
+            <div>
+              <h3>Curso <span class="nq">VB-MAPP</span></h3>
+              <ul class="lista">
+                <li>4 horas de videoaulas gravadas</li>
+                <li>
+                  O que é o <span class="nq">VB-MAPP</span> e por que aplicar
+                </li>
+                <li>Como o protocolo funciona</li>
+                <li>Aplicação na prática, com exemplos reais</li>
+                <li>1 ano de acesso</li>
+              </ul>
+            </div>
+            <div class="oferta-lado">
+              <p class="preco">R$&nbsp;49,90</p>
+              <a class="btn" href="https://pay.kiwify.com.br/oub3qMp" data-cta
+                >Garantir meu acesso</a
+              >
+              <div class="garantia">
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                  <path
+                    d="M16 3 5 7v8c0 7 4.7 12 11 14 6.3-2 11-7 11-14V7z"
+                    fill="#85BC40"
+                  />
+                  <path
+                    d="m11 16.5 3.5 3.5 7-7.5"
+                    fill="none"
+                    stroke="#0E2A44"
+                    stroke-width="2.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>
+                  <strong>Garantia de 7 dias.</strong> Se não gostar, peça o
+                  reembolso em até 7 dias após a compra e receba todo o valor de
+                  volta.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. FAQ -->
+      <section class="secao" id="faq" aria-labelledby="titulo-faq">
+        <div class="wrap">
+          <h2 id="titulo-faq">Perguntas frequentes</h2>
+
+          <div class="faq">
+            <details>
+              <summary>
+                <h3>
+                  O curso inclui o protocolo <span class="nq">VB-MAPP</span>?
+                </h3>
+              </summary>
+              <p>
+                Não. O curso explica o que é o protocolo, como ele funciona e
+                como aplicar. O manual e as folhas de registro do
+                <span class="nq">VB-MAPP</span> são vendidos separadamente.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <h3>
+                  Preciso já ter aplicado o <span class="nq">VB-MAPP</span>?
+                </h3>
+              </summary>
+              <p>
+                Não. O curso começa explicando o que é o protocolo e como ele
+                funciona, antes de chegar à aplicação.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <h3>Para quais profissionais o curso é indicado?</h3>
+              </summary>
+              <p>
+                Para psicólogos, fonoaudiólogos, fisioterapeutas e terapeutas
+                ocupacionais que atendem crianças autistas.
+              </p>
+            </details>
+            <details>
+              <summary><h3>As aulas são ao vivo?</h3></summary>
+              <p>
+                Não. São videoaulas gravadas, com 4 horas no total. Você assiste
+                quando quiser.
+              </p>
+            </details>
+            <details>
+              <summary><h3>Por quanto tempo tenho acesso?</h3></summary>
+              <p>Por 1 ano a partir da compra.</p>
+            </details>
+            <details>
+              <summary><h3>Como recebo o acesso?</h3></summary>
+              <p>
+                Depois que o pagamento é confirmado, você recebe por e-mail as
+                instruções de acesso ao curso na Kiwify.
+              </p>
+            </details>
+            <details>
+              <summary><h3>Quem dá as aulas?</h3></summary>
+              <p>
+                Camila Olegario, psicóloga especialista em Análise
+                Comportamental Aplicada (ABA), com 3 anos de experiência.
+              </p>
+            </details>
+            <details>
+              <summary><h3>O que é a Lapidar Educação?</h3></summary>
+              <p>
+                É a frente de cursos da Lapidar Clínica Multidisciplinar, de
+                Senador Canedo (GO), que há mais de 1 ano atende crianças e
+                adolescentes. Nos cursos, a equipe compartilha o que aplica na
+                prática clínica.
+              </p>
+            </details>
+            <details>
+              <summary><h3>E se eu não gostar?</h3></summary>
+              <p>
+                Você tem 7 dias de garantia. Peça o reembolso pela Kiwify dentro
+                desse prazo e receba todo o valor de volta.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. CTA FINAL -->
+      <section
+        class="secao final"
+        id="comecar"
+        aria-labelledby="titulo-final"
+        data-esconde-barra
+      >
+        <div class="wrap">
+          <h2 id="titulo-final">
+            O <span class="nq">VB-MAPP</span> fica mais claro quando alguém
+            mostra na prática.
+          </h2>
+          <p class="final-texto">
+            4 horas de videoaulas, 1 ano de acesso e 7 dias de garantia, por
+            R$&nbsp;49,90.
+          </p>
+          <a
+            class="btn btn-escuro"
+            href="https://pay.kiwify.com.br/oub3qMp"
+            data-cta
+            >Garantir meu acesso</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="rodape escuro" data-esconde-barra>
+      <div class="wrap rodape-linha">
+        <div>
+          <p>© <span id="ano">2026</span> Lapidar Educação</p>
+          <p>LAPIDAR CLINICA MULTIDISCIPLINAR</p>
+          <p>CNPJ 63.632.994/0001-89</p>
+          <p class="rodape-aviso">
+            O curso não inclui o protocolo <span class="nq">VB-MAPP</span>, que
+            é obra de Mark L. Sundberg e deve ser adquirido separadamente.
+          </p>
+        </div>
+        <!-- Troque os "#" pelos links das páginas reais. -->
+        <nav class="rodape-links" aria-label="Links do rodapé">
+          <a href="#">Política de privacidade</a>
+          <a href="#">Termos de uso</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Barra fixa com o botão, só no celular -->
+    <div class="barra" id="barra">
+      <a class="btn" href="https://pay.kiwify.com.br/oub3qMp" data-cta
+        >Garantir meu acesso</a
+      >
+    </div>
+  </body>
+</html>

@@ -1,0 +1,989 @@
+/* ==========================================================================
+   Curso VB-MAPP na prática | Lapidar Clínica Multidisciplinar
+   Cores da marca: #3394D0 (azul), #FECA40 (amarelo), #E2312C (vermelho), #85BC40 (verde)
+   ========================================================================== */
+
+:root {
+  --marinho: #0e2a44; /* fundos escuros e texto do botão */
+  --marinho-claro: #163a5c;
+  --tinta: #12324a; /* texto principal */
+  --suave: #4a6178; /* texto secundário */
+  --azul: #3394d0;
+  --azul-texto: #1b6699; /* links em fundo claro */
+  --amarelo: #feca40; /* botões */
+  --amarelo-claro: #ffd866;
+  --amarelo-sombra: #c99a1a;
+  --vermelho: #e2312c;
+  --verde: #85bc40;
+  --nevoa: #eef6fb; /* fundo suave */
+  --linha: #d3e3ee;
+  --branco: #ffffff;
+  --texto-escuro: #d6e3ee; /* texto secundário em fundo escuro */
+  --f-titulo:
+    "Red Hat Display", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-texto:
+    "Red Hat Text", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --largura: 1120px;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: var(--f-texto);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--tinta);
+  background: var(--branco);
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--f-titulo);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+h1,
+h2 {
+  font-weight: 800;
+}
+h3 {
+  font-weight: 700;
+}
+p {
+  margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: var(--azul-texto);
+}
+:focus-visible {
+  outline: 3px solid var(--tinta);
+  outline-offset: 3px;
+}
+.escuro :focus-visible {
+  outline-color: var(--amarelo);
+}
+.final :focus-visible {
+  outline-color: var(--marinho);
+}
+
+.wrap {
+  width: min(100% - 2.5rem, var(--largura));
+  margin-inline: auto;
+}
+.nq {
+  white-space: nowrap;
+} /* não quebra "VB-MAPP" no hífen */
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.pular {
+  position: absolute;
+  left: 1rem;
+  top: -5rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--branco);
+  color: var(--tinta);
+  font-weight: 700;
+  border: 2px solid var(--tinta);
+  border-radius: 10px;
+}
+.pular:focus {
+  top: 1rem;
+}
+
+/* Marca o que falta preencher. Some quando você troca o texto. */
+.todo {
+  padding: 0.05em 0.3em;
+  background: #ffe3e2;
+  color: var(--tinta);
+  border-radius: 6px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* ---------- Botão (o mesmo em toda a página) ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  padding: 0.9rem 1.6rem;
+  background: var(--amarelo);
+  color: var(--marinho);
+  font-family: var(--f-titulo);
+  font-weight: 800;
+  font-size: clamp(1.05rem, 4.4vw, 1.2rem);
+  line-height: 1.1;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 14px;
+  box-shadow: 0 4px 0 var(--amarelo-sombra);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    background-color 0.12s ease;
+}
+.btn:hover {
+  background: var(--amarelo-claro);
+}
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--amarelo-sombra);
+}
+.btn-p {
+  min-height: 46px;
+  padding: 0.5rem 1.1rem;
+  font-size: 1rem;
+  box-shadow: 0 3px 0 var(--amarelo-sombra);
+}
+.btn-p:active {
+  transform: translateY(3px);
+}
+.btn-escuro {
+  background: var(--marinho);
+  color: var(--amarelo);
+  box-shadow: 0 4px 0 #061524;
+}
+.btn-escuro:hover {
+  background: var(--marinho-claro);
+}
+
+/* ---------- Topo ---------- */
+.topo {
+  background: var(--branco);
+  border-bottom: 1px solid var(--linha);
+}
+.topo-linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 62px;
+}
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--f-titulo);
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+  color: var(--tinta);
+  text-decoration: none;
+}
+.marca-logo {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.topo-cta {
+  display: none;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding-block: 2.5rem 3.5rem;
+  background: var(--marinho);
+  color: var(--branco);
+  overflow: hidden;
+}
+.hero-grade {
+  display: grid;
+  gap: 2.75rem;
+}
+.hero h1 {
+  max-width: 13ch;
+  font-size: clamp(2.4rem, 9.4vw, 4.3rem);
+}
+.hero-selo {
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--verde);
+}
+.hero-sub {
+  margin-top: 1.1rem;
+  max-width: 40ch;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--texto-escuro);
+}
+.hero-cta {
+  margin-top: 1.75rem;
+}
+.hero .btn {
+  width: 100%;
+}
+.fatos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.4rem;
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  color: var(--texto-escuro);
+}
+.fatos li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.fatos li::before {
+  content: "";
+  flex: none;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 3px;
+  background: var(--verde);
+}
+.fatos li:nth-child(2)::before {
+  background: var(--amarelo);
+}
+.fatos li:nth-child(3)::before {
+  background: var(--azul);
+}
+
+/* Grade de marcos: os quadrados se preenchem uma vez, ao abrir a página */
+.grade-marcos {
+  margin: 0;
+  padding: 1.25rem 1.25rem 1.4rem;
+  background: var(--marinho-claro);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+}
+.nivel {
+  display: grid;
+  gap: 0.5rem;
+  padding-block: 0.8rem;
+}
+.nivel + .nivel {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.nivel-rotulo {
+  line-height: 1.25;
+}
+.nivel-rotulo strong {
+  font-family: var(--f-titulo);
+  font-size: 1.05rem;
+}
+.nivel-rotulo span {
+  margin-left: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--texto-escuro);
+  white-space: nowrap;
+}
+.quadros {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 4px;
+}
+.q {
+  aspect-ratio: 1;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+.q.v {
+  --cor: var(--verde);
+}
+.q.a {
+  --cor: var(--amarelo);
+}
+.q.b {
+  --cor: var(--azul);
+}
+.q.ok {
+  background: var(--cor);
+  border-color: var(--cor);
+  animation: marcar 0.35s ease-out both;
+  animation-delay: calc(var(--i) * 55ms + 0.3s);
+}
+@keyframes marcar {
+  from {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: scale(0.6);
+  }
+  to {
+    background: var(--cor);
+    border-color: var(--cor);
+    transform: scale(1);
+  }
+}
+.grade-marcos figcaption {
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--texto-escuro);
+}
+
+/* ---------- Seções ---------- */
+.secao {
+  padding-block: clamp(3.5rem, 9vw, 6.5rem);
+}
+.secao-nevoa {
+  background: var(--nevoa);
+}
+.secao h2 {
+  max-width: 22ch;
+  font-size: clamp(1.9rem, 5.4vw, 2.9rem);
+}
+.intro {
+  margin-top: 1rem;
+  max-width: 56ch;
+  color: var(--suave);
+}
+.escuro .intro {
+  color: var(--texto-escuro);
+}
+
+/* ---------- Placeholder de imagem ---------- */
+.ph {
+  display: grid;
+  place-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: var(--branco);
+  color: var(--suave);
+  font-size: 1rem;
+  line-height: 1.4;
+  text-align: center;
+  border: 2px dashed var(--suave);
+  border-radius: 18px;
+}
+.ph-num {
+  font-family: var(--f-titulo);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--tinta);
+}
+.foto {
+  width: 100%;
+  border-radius: 18px;
+}
+
+/* ---------- Problema ---------- */
+.duvidas {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 44rem;
+  margin-top: 2rem;
+}
+.duvidas li {
+  padding: 1rem 1.2rem;
+  background: var(--nevoa);
+  border-left: 5px solid var(--vermelho);
+  border-radius: 4px 14px 14px 4px;
+}
+.fecho {
+  max-width: 30ch;
+  margin-top: 2.25rem;
+  font-family: var(--f-titulo);
+  font-weight: 700;
+  font-size: clamp(1.35rem, 3.3vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Solução ---------- */
+.solucao-grade {
+  display: grid;
+  gap: 2.5rem;
+}
+.pontos {
+  display: grid;
+  gap: 1.4rem;
+  margin-top: 2rem;
+}
+.ponto {
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  column-gap: 0.9rem;
+}
+.ponto::before {
+  content: "";
+  grid-row: 1 / span 2;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.3rem;
+  border-radius: 4px;
+  background: var(--verde);
+}
+.ponto:nth-child(2)::before {
+  background: var(--amarelo);
+}
+.ponto:nth-child(3)::before {
+  background: var(--azul);
+}
+.ponto h3 {
+  font-size: 1.3rem;
+}
+.ponto p {
+  margin-top: 0.3rem;
+  max-width: 46ch;
+  color: var(--suave);
+}
+.ph-video {
+  aspect-ratio: 16/9;
+}
+.oque {
+  margin-top: 1.25rem;
+  padding: 1.4rem;
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  border-radius: 16px;
+}
+.oque h3 {
+  font-size: 1.2rem;
+}
+.oque p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--suave);
+}
+
+/* ---------- O que você vai aprender ---------- */
+.etapas {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.etapa {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  align-items: start;
+  align-content: start;
+  gap: 1rem;
+  padding: 1.2rem;
+  border: 1px solid var(--linha);
+  border-radius: 16px;
+}
+.etapa-num {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  font-family: var(--f-titulo);
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--marinho);
+  background: var(--verde);
+  border-radius: 10px;
+}
+.etapa:nth-child(2) .etapa-num {
+  background: var(--amarelo);
+}
+.etapa:nth-child(3) .etapa-num {
+  background: var(--azul);
+}
+.etapa:nth-child(4) .etapa-num {
+  background: var(--vermelho);
+  color: var(--branco);
+}
+.etapa h3 {
+  font-size: 1.25rem;
+}
+.etapa p {
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--suave);
+}
+.formato {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.formato li {
+  padding: 1rem 1.2rem;
+  background: var(--nevoa);
+  border-radius: 14px;
+  color: var(--suave);
+}
+.formato strong {
+  display: block;
+  font-family: var(--f-titulo);
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  color: var(--tinta);
+}
+
+/* ---------- Para quem é ---------- */
+.quem-grade {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.quem {
+  padding: 1.6rem 1.5rem;
+  background: var(--branco);
+  border-radius: 18px;
+}
+.quem h3 {
+  font-size: 1.4rem;
+}
+.lista {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.1rem;
+}
+.lista li {
+  position: relative;
+  padding-left: 2.2rem;
+}
+.lista li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  width: 1.45rem;
+  height: 1.45rem;
+  border-radius: 50%;
+  background: var(--verde)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230E2A44' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E")
+    center/62% no-repeat;
+}
+.lista-nao li::before {
+  background-color: var(--vermelho);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6L6 18'/%3E%3C/svg%3E");
+}
+
+/* ---------- A clínica ---------- */
+.clinica-grade {
+  display: grid;
+  gap: 2.5rem;
+}
+.clinica-foto {
+  max-width: 22rem;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+.clinica-endereco {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: var(--suave);
+}
+.clinica-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+.btn-contorno {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 48px;
+  padding: 0.6rem 1.15rem;
+  background: var(--branco);
+  color: var(--tinta);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.1;
+  text-decoration: none;
+  border: 1.5px solid var(--linha);
+  border-radius: 12px;
+  transition:
+    border-color 0.12s ease,
+    color 0.12s ease;
+}
+.btn-contorno:hover {
+  border-color: var(--azul);
+  color: var(--azul-texto);
+}
+.btn-contorno svg {
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Sobre ---------- */
+.sobre-grade {
+  display: grid;
+  gap: 2.5rem;
+}
+.sobre-foto {
+  width: 100%;
+  max-width: 22rem;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+.sobre-bloco {
+  margin-top: 1.75rem;
+}
+.sobre-bloco + .sobre-bloco {
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--linha);
+}
+.sobre-bloco h3 {
+  font-size: 1.45rem;
+}
+.cargo {
+  margin-top: 0.35rem;
+  color: var(--suave);
+}
+.sobre-bloco h3 + p {
+  margin-top: 0.35rem;
+}
+.sobre-bloco p + p {
+  margin-top: 0.75rem;
+}
+
+/* ---------- Prova social ---------- */
+.prints {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-bottom: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.print {
+  flex: 0 0 72%;
+  margin: 0;
+  scroll-snap-align: start;
+}
+.print .ph {
+  aspect-ratio: 9/16;
+}
+.print img {
+  width: 100%;
+  border: 1px solid var(--linha);
+  border-radius: 18px;
+}
+
+/* ---------- Oferta ---------- */
+.oferta {
+  background: var(--marinho);
+  color: var(--branco);
+}
+.oferta-cartao {
+  display: grid;
+  gap: 1.75rem;
+  max-width: 58rem;
+  margin-top: 2rem;
+  padding: 2.1rem 1.5rem 1.9rem;
+  background: var(--branco);
+  color: var(--tinta);
+  border-radius: 22px;
+  background-image: linear-gradient(
+    90deg,
+    var(--verde) 0 25%,
+    var(--amarelo) 25% 50%,
+    var(--azul) 50% 75%,
+    var(--vermelho) 75% 100%
+  );
+  background-size: 100% 8px;
+  background-repeat: no-repeat;
+}
+.oferta-cartao h3 {
+  font-size: 1.6rem;
+}
+.preco {
+  font-family: var(--f-titulo);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 10vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.oferta-lado .btn {
+  width: 100%;
+  margin-top: 1.4rem;
+}
+.garantia {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  align-items: start;
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  background: #eff6e6;
+  border-radius: 14px;
+}
+.garantia svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+/* ---------- FAQ ---------- */
+.faq {
+  max-width: 48rem;
+  margin-top: 2rem;
+  border-top: 2px solid var(--tinta);
+}
+.faq details {
+  border-bottom: 1px solid var(--linha);
+}
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 0;
+  list-style: none;
+  cursor: pointer;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary h3 {
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+.faq summary::after {
+  content: "";
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  background: var(--amarelo)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230E2A44' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E")
+    center/55% no-repeat;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+.faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+.faq details p {
+  max-width: 60ch;
+  padding-bottom: 1.3rem;
+  color: var(--suave);
+}
+
+/* ---------- CTA final ---------- */
+.final {
+  background: var(--amarelo);
+  color: var(--marinho);
+}
+.final h2 {
+  max-width: 20ch;
+  font-size: clamp(2rem, 6vw, 3.3rem);
+}
+.final-texto {
+  max-width: 44ch;
+  margin-top: 1.1rem;
+}
+.final .btn {
+  width: 100%;
+  margin-top: 1.9rem;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  padding-block: 2.25rem 2.5rem;
+  background: var(--marinho);
+  color: var(--texto-escuro);
+  font-size: 1rem;
+}
+.rodape a {
+  color: var(--branco);
+}
+.rodape-linha {
+  display: grid;
+  gap: 1.25rem;
+}
+.rodape-aviso {
+  max-width: 60ch;
+  margin-top: 0.75rem;
+  font-size: 0.92rem;
+}
+.rodape-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+/* ---------- Barra fixa no celular ---------- */
+.barra {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  padding: 0.7rem 1.25rem calc(0.9rem + env(safe-area-inset-bottom));
+  background: var(--branco);
+  border-top: 1px solid var(--linha);
+  box-shadow: 0 -6px 18px rgba(14, 42, 68, 0.12);
+  transform: translateY(110%);
+  visibility: hidden;
+  transition:
+    transform 0.25s ease,
+    visibility 0.25s;
+}
+.barra.is-visivel {
+  transform: none;
+  visibility: visible;
+}
+.barra .btn {
+  width: 100%;
+  min-height: 52px;
+}
+
+/* ---------- Telas maiores ---------- */
+@media (min-width: 24em) {
+  /* rótulo do nível ao lado dos quadrados */
+  .nivel {
+    grid-template-columns: 6.4rem 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+  .nivel-rotulo strong {
+    display: block;
+  }
+  .nivel-rotulo span {
+    margin-left: 0;
+  }
+}
+@media (min-width: 40em) {
+  .formato {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 44em) {
+  .quem-grade {
+    grid-template-columns: 1fr 1fr;
+  }
+  .quem {
+    padding: 2rem;
+  }
+  .etapas {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 48em) {
+  .topo {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+  }
+  .topo-linha {
+    min-height: 72px;
+  }
+  .topo-cta {
+    display: inline-flex;
+  }
+  section[id] {
+    scroll-margin-top: 4.6rem;
+  }
+  .hero .btn,
+  .final .btn {
+    width: auto;
+  }
+  .barra {
+    display: none;
+  }
+  .prints {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: visible;
+    padding-bottom: 0;
+  }
+  .rodape-linha {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+}
+@media (min-width: 56em) {
+  .sobre-grade,
+  .clinica-grade {
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 4rem;
+  }
+  .oferta-cartao {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem 2.75rem 2.75rem;
+  }
+}
+@media (min-width: 60em) {
+  .hero {
+    padding-block: 4.5rem 5rem;
+  }
+  .hero-grade {
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 4rem;
+  }
+  .solucao-grade {
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 4rem;
+  }
+
+}
+@media (min-width: 64em) {
+  .etapas {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .etapa {
+    grid-template-columns: 1fr;
+    padding: 1.4rem;
+  }
+}
+@media (max-width: 47.99em) {
+  .rodape {
+    padding-bottom: 6.5rem;
+  } /* espaço para a barra fixa */
+}
+@media (max-width: 22.4em) {
+  /* celulares muito estreitos */
+  .btn {
+    padding-inline: 1rem;
+    font-size: 1rem;
+  }
+  .oferta-cartao {
+    padding-inline: 1.1rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

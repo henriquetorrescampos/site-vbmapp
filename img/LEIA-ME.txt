@@ -1,0 +1,12 @@
+Salve aqui as imagens da página, com estes nomes:
+
+mockup-aulas.webp      Imagem 1: videoaula do curso aberta no notebook ou celular (1280 x 720 px)
+camila-olegario.webp   Imagem 2: foto da Camila Olegario (800 x 1000 px)
+print-1.jpg            Prints reais de mensagens de alunos, com autorização,
+print-2.jpg            sem número de telefone nem foto de perfil (720 x 1280 px)
+print-3.jpg
+compartilhamento.jpg   Imagem que aparece ao compartilhar o link (1200 x 630 px)
+logo-lapidar.png       Logo da Lapidar no topo (já incluído)
+
+Depois de salvar, troque no index.html cada bloco <div class="ph"> pela tag <img>
+indicada no comentário logo acima dele.
