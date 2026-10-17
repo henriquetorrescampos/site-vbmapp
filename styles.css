@@ -723,6 +723,65 @@ a {
   line-height: 1;
   letter-spacing: -0.02em;
 }
+.oferta-selo {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.8rem;
+  background: var(--vermelho);
+  color: var(--branco);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 999px;
+}
+.preco-de {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--suave);
+  font-size: 1.1rem;
+}
+.preco-de s {
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--vermelho);
+}
+.desconto {
+  padding: 0.2rem 0.55rem;
+  background: var(--verde);
+  color: var(--marinho);
+  font-size: 0.9rem;
+  font-weight: 800;
+  border-radius: 6px;
+}
+.preco-por {
+  margin-top: 0.6rem;
+  font-weight: 700;
+  color: var(--suave);
+}
+.preco-por + .preco {
+  margin-top: 0.15rem;
+}
+.acesso-imediato {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--suave);
+}
+.acesso-imediato svg {
+  flex: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: var(--amarelo);
+  stroke: var(--amarelo-sombra);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
 .oferta-lado .btn {
   width: 100%;
   margin-top: 1.4rem;

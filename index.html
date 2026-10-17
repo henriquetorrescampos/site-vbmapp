@@ -132,10 +132,10 @@
       href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700;800&family=Red+Hat+Text:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <!-- O "?v=3" força o navegador a baixar a versão nova. Sempre que alterar
+    <!-- O "?v=4" força o navegador a baixar a versão nova. Sempre que alterar
      o styles.css ou o script.js, aumente o número (?v=4, ?v=5...). -->
-    <link rel="stylesheet" href="styles.css?v=3" />
-    <script src="script.js?v=3" defer></script>
+    <link rel="stylesheet" href="styles.css?v=4" />
+    <script src="script.js?v=4" defer></script>
 
     <!-- ====================== PIXEL E ANALYTICS (HEAD) ======================
   Cole aqui os códigos que vão no <head>:
@@ -648,10 +648,22 @@
               </ul>
             </div>
             <div class="oferta-lado">
+              <p class="oferta-selo">Oferta por tempo limitado</p>
+              <p class="preco-de">
+                De <s>R$&nbsp;190,90</s>
+                <span class="desconto">74% OFF</span>
+              </p>
+              <p class="preco-por">por apenas</p>
               <p class="preco">R$&nbsp;49,90</p>
               <a class="btn" href="https://pay.kiwify.com.br/oub3qMp" data-cta
                 >Garantir meu acesso</a
               >
+              <p class="acesso-imediato">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M13 2 4 14h7l-1 8 9-12h-7z" />
+                </svg>
+                Acesso imediato após a confirmação do pagamento
+              </p>
               <div class="garantia">
                 <svg viewBox="0 0 32 32" aria-hidden="true">
                   <path
@@ -738,7 +750,7 @@
               <summary><h3>Quem dá as aulas?</h3></summary>
               <p>
                 Camila Olegario, psicóloga especialista em Análise
-                Comportamental Aplicada (ABA), com 3 anos de experiência.
+                Comportamental Aplicada (ABA), com 5 anos de experiência.
               </p>
             </details>
             <details>
@@ -774,8 +786,8 @@
             mostra na prática.
           </h2>
           <p class="final-texto">
-            4 horas de videoaulas, 1 ano de acesso e 7 dias de garantia, por
-            R$&nbsp;49,90.
+            4 horas de videoaulas, 1 ano de acesso e 7 dias de garantia. De
+            <s>R$&nbsp;190,90</s> por apenas R$&nbsp;49,90, por tempo limitado.
           </p>
           <a
             class="btn btn-escuro"
@@ -798,11 +810,6 @@
             é obra de Mark L. Sundberg e deve ser adquirido separadamente.
           </p>
         </div>
-        <!-- Troque os "#" pelos links das páginas reais. -->
-        <nav class="rodape-links" aria-label="Links do rodapé">
-          <a href="#">Política de privacidade</a>
-          <a href="#">Termos de uso</a>
-        </nav>
       </div>
     </footer>
 
