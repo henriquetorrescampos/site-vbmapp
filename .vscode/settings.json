@@ -1,0 +1,15 @@
+{
+  // Este projeto é HTML/CSS puro, sem configuração do ESLint.
+  // Usa o Prettier para formatar e desliga o ESLint só nesta pasta.
+  "eslint.enable": false,
+  "editor.codeActionsOnSave": {},
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
