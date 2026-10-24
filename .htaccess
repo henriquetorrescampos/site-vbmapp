@@ -1,0 +1,11 @@
+# Redireciona todas as versões do endereço para https://descomplicanvbmapp.com.br/
+# para o Google ver uma página só (evita "Rastreada, mas não indexada").
+RewriteEngine On
+
+# www -> sem www (o http -> https a Hostinger já faz sozinha)
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://descomplicanvbmapp.com.br/$1 [R=301,L]
+
+# /index.html -> /
+RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
